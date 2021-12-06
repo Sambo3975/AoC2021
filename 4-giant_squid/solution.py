@@ -151,7 +151,7 @@ def main():
         print('  r: random game (random board size, random numbers, and random diagonal win setting)')
         print('--------------------------------------------------------------------------------------')
         enter_to_continue = True
-        match input('> '):
+        match input('>> '):
             case 't1':
                 part_1_test(*read_game('test.txt'))
             case '1':
