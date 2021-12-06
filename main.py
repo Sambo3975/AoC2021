@@ -35,9 +35,11 @@ if __name__ == '__main__':
                         paths = glob.glob(cmd + '-*/')
                         if len(paths) > 0:
                             solution = importlib.import_module(paths[0][:-1] + '.solution')
+                            print()
                             day_title(paths[0])
                             os.chdir(paths[0])  # Move to the selected day's path, so it can open files properly
                             solution.main()     # The linter doesn't like this, but it works fine
+                            print()
                             os.chdir('../')     # Move back up to the root directory so this will work repeatedly
                         else:
                             print(f'Day {day} not yet implemented.')
