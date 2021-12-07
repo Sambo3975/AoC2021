@@ -64,7 +64,7 @@ def main():
         case 'n':
             return
         case _:
-            plot(data)  # Tuns out this isn't very interesting because the fuel cost for part 2 dwarfs that of part 1
+            plot(data)  # Tuns out this isn't very interesting because the fuel cost for part 2 dwarfs that of part 1.
 
 
 if __name__ == '__main__':
