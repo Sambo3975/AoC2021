@@ -8,7 +8,7 @@ def help_msg():
     print('Welcome to Advent of Code 2021!')
     print('Enter a number between 1 and 25 to choose a day.')
     print('Enter \'q\' to quit.')
-    print('Enter \'h\' do display this message again.')
+    print('--------------------------------------------------')
 
 
 def day_title(path):
@@ -20,14 +20,12 @@ def day_title(path):
 
 
 if __name__ == '__main__':
-    help_msg()
     while True:
+        help_msg()
         cmd = input('> ')
         match cmd:
             case 'q':
                 break
-            case 'h':
-                help_msg()
             case _:
                 try:
                     day = int(cmd)
