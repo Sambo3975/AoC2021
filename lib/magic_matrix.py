@@ -24,8 +24,8 @@ class MagicMatrix:
             self.__extents[1] = min(self.__extents[1], key[1])
             self.__extents[2] = max(self.__extents[2], key[0])
             self.__extents[3] = max(self.__extents[3], key[1])
-        self.__column_width = max((self.__column_width, len(str(value)), len(str(self.__extents[0])),
-                                   len(str(self.__extents[2]))))
+        self.__column_width = max((self.__column_width, len(str(value)), len(str(self.__extents[1])),
+                                   len(str(self.__extents[3]))))
         if self.min is None:
             self.min = value
             self.max = value
