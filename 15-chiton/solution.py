@@ -1,13 +1,14 @@
 # I could have done A*, but according to the Subreddit, it has little to no benefit over Dijkstra for this problem.
 import load_file
 from grid import WeightedGrid, dijkstra_search
-from timeit import timeit
 from numpy import zeros
 
 
 # ---------------------
 # Helper Functions
 # ---------------------
+from option_selection import OptionSelector
+
 
 def extend_grid(grid):
     length = len(grid)
@@ -64,33 +65,13 @@ def test_3():
 # -------------------
 
 def main():
-    while True:
-        print('Choose an option from below (q to quit):')
-        print('  1  : 100x100 best path search')
-        print('  2  : 500x500 best path search')
-        print('  t1 : Pathfinding test')
-        print('  t2 : Grid extension test')
-        print('  t3 : Large pathfinding test')
-        print('--------------------------------------------')
-        time = None
-        match input('>> '):
-            case '1':
-                time = timeit(part_1, number=1)
-            case '2':
-                time = timeit(part_2, number=1)
-            case 't1':
-                time = timeit(test_1, number=1)
-            case 't2':
-                time = timeit(test_2, number=1)
-            case 't3':
-                time = timeit(test_3, number=1)
-            case 'q':
-                break
-            case _:
-                print('Invalid input')
-        if time is not None:
-            print(f'Completed after {time:.4f} s')
-        print()
+    selector = OptionSelector(timed=True)
+    selector.add_option('1', '100x100 best path search', part_1)
+    selector.add_option('2', '500x500 best path search', part_2)
+    selector.add_option('t1', 'Pathfinding test', test_1)
+    selector.add_option('t2', 'Grid extension test', test_2)
+    selector.add_option('t3', 'Large pathfinding test', test_3)
+    selector.run()
 
 
 if __name__ == '__main__':
