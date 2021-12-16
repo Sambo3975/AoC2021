@@ -1,7 +1,7 @@
 """Based on https://www.redblobgames.com/pathfinding/a-star/implementation.html but with some changes and
 simplifications """
 
-from numpy import array, ndarray
+from numpy import array
 from heapq import heappush, heappop
 import load_file
 
