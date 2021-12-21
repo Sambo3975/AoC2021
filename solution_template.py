@@ -7,7 +7,7 @@ def part_2(data):
 
 
 def main():
-    with open('test.txt') as f:
+    with open('test_in.txt') as f:
         data = f.readlines()
     part_1(data)
     part_2(data)
